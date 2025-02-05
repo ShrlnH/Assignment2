@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment no.2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', serif;
+        }
+
+        body {
+            background: url(skr.jpg) center center/cover;
+            backdrop-filter: blur(4px);
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            min-height: 100%;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(238, 167, 167, 0.7);
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #efe09e;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: #d5674f;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .navigation a:hover {
+            color: #ea6c79;
+            background-color: #ee9b8e;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #f25675;
+            margin: 5px;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 50px 20px;
+        }
+
+        .card {
+            background: rgba(245, 222, 228, 0.937);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            height: 400px;
+            box-shadow: 0 4px 8px rgba(250, 243, 243, 0.5);
+            text-align: left;
+            color: #524f41;
+            padding: 20px;
+            margin: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 22px;
+            color: #da6a9c;
+        }
+
+        .card p {
+            font-size: 18px;
+            font-weight: normal;
+            color: #524f41;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 551px) {
+            .navigation {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.8);
+                padding: 10px;
+                border-radius: 5px;
+                width: 200px;
+            }
+
+            .navigation.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.navigation').classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div><img src="logo.jpg" alt="logo" style="height: auto; width: 50px; border-radius: 50%;"></div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Hobby</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="card">
+            <img src="me.jpg" alt="me">
+            <h3>About Me</h3>
+            <p>Hi! I'm Sharlene, a second-year IT student at Dalubhasaan Ng Lungsod ng Lucena.</p>
+        </div>
+
+        <div class="card">
+            <img src="music.jpg" alt="listening to music">
+            <h3>Hobby</h3>
+            <p>I love listening to music because it calms me and serves as an escape from stress.</p>
+        </div>
+
+        <div class="card">
+            <img src="who.jpg" alt="who">
+            <h3>Idunno</h3>
+            <p>I just don't want it to be empty haha</p>
+        </div>
+    </div>
+</body>
+</html>
